@@ -1,0 +1,10 @@
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\VectorOps.exe.config
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\VectorOps.exe
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\VectorOps.pdb
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\obj\Debug\VectorOps.csproj.AssemblyReference.cache
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\obj\Debug\VectorOps.Properties.Resources.resources
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\obj\Debug\VectorOps.csproj.GenerateResource.cache
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\obj\Debug\VectorOps.csproj.CoreCompileInputs.cache
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\obj\Debug\VectorOps.exe
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\obj\Debug\VectorOps.pdb
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\obj\Debug\VectorOps.VectorOps.resources

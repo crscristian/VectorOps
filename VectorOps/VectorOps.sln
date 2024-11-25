@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorOps", "VectorOps.csproj", "{4EB72455-7A27-43EB-A4CD-DDA0274F958B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EB72455-7A27-43EB-A4CD-DDA0274F958B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB72455-7A27-43EB-A4CD-DDA0274F958B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB72455-7A27-43EB-A4CD-DDA0274F958B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB72455-7A27-43EB-A4CD-DDA0274F958B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A12D7CE-3101-4AB7-92D9-2D0F7E7897F7}
+	EndGlobalSection
+EndGlobal
