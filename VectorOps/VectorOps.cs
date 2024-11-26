@@ -16,11 +16,18 @@ namespace VectorOps
         public VectorOps()
         {
             InitializeComponent();
+            //init variables 
+            radVector2D.Checked = true;
+            txtZV1.Visible = false;
+            ZV1.Visible = false;
+            txtZV2.Visible = false;
+            ZV2.Visible = false;
+
         }
 
         private void VectorOps_Load(object sender, EventArgs e)
         {
-        //adaugarea optiunilor pentru selectie
+        //add options for select
             cmbOption.Items.Add("None");
             cmbOption.Items.Add("Addition");
             cmbOption.Items.Add("Subtraction");
@@ -28,9 +35,30 @@ namespace VectorOps
             cmbOption.Items.Add("Dot Product");
             cmbOption.Items.Add("Cross Product");
             cmbOption.Items.Add("Vector Rotation");
-         // Setarea opțiunii implicite (prima opțiune)
-            cmbOption.SelectedIndex = 0; // Index 0 reprezintă "None"
-            //cmbOption.MaxDropDownItems = 3; //nr maxim de elemente pe care le afiseaza combox inainte de aparea bara de derulare
+         // Implicit selection (first option)
+            cmbOption.SelectedIndex = 0; // Index 0 is "None"
+            
+
+        }
+
+        private void radVector2D_CheckedChanged(object sender, EventArgs e)
+        {
+            txtZV1.Visible = false; // if is checked 2D vector, Z parameter set is hide
+            ZV1.Visible = false;
+            txtZV2.Visible = false;
+            ZV2.Visible = false;
+        }
+
+        private void radVector3D_CheckedChanged(object sender, EventArgs e)
+        {
+            txtZV1.Visible = true;//if is checked 3D vector, Z parameter set is visible
+            ZV1.Visible = true;
+            txtZV2.Visible = true;
+            ZV2.Visible = true;
+        }
+
+        private void cmbOption_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
