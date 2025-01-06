@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|d:\\visulastudioworkplace\\vectorops\\vectorops\\vectorops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:vectorops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|d:\\visulastudioworkplace\\vectorops\\vectorops\\vectorops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:vectorops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\vectorops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:vectorops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\vectorops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:vectorops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,29 +18,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "VectorOps.cs",
               "DocumentMoniker": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\VectorOps.cs",
               "RelativeDocumentMoniker": "VectorOps.cs",
-              "ToolTip": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\VectorOps.cs",
-              "RelativeToolTip": "VectorOps.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
+              "ToolTip": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\VectorOps.cs*",
+              "RelativeToolTip": "VectorOps.cs*",
+              "ViewState": "AgIAABcBAAAAAAAAAAAkwDABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T18:28:42.127Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "VectorOps.cs [Design]",
               "DocumentMoniker": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\VectorOps.cs",
               "RelativeDocumentMoniker": "VectorOps.cs",
-              "ToolTip": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\VectorOps.cs [Design]",
-              "RelativeToolTip": "VectorOps.cs [Design]",
+              "ToolTip": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\VectorOps.cs [Design]*",
+              "RelativeToolTip": "VectorOps.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T18:24:10.193Z",
               "EditorCaption": " [Design]"
