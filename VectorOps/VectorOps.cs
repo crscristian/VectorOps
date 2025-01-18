@@ -178,6 +178,9 @@ namespace VectorOps
                     }
                     break;
 
+                case "Rotatie Vector":
+                    
+                    break;
                 default:
                     MessageBox.Show("Opțiune necunoscută!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
@@ -454,7 +457,6 @@ namespace VectorOps
             labelY.Visible = false;
             labelZ.Visible = false;
         }
-
 
         private float ParseStringToFloat(string input)
         {
