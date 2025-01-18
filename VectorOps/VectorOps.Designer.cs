@@ -57,6 +57,14 @@
             this.errorProviderYV1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderYV2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderXV2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelZ = new System.Windows.Forms.Label();
+            this.labelY = new System.Windows.Forms.Label();
+            this.labelX = new System.Windows.Forms.Label();
+            this.txtResultZ = new System.Windows.Forms.TextBox();
+            this.txtResultY = new System.Windows.Forms.TextBox();
+            this.txtResultX = new System.Windows.Forms.TextBox();
+            this.txtNormVector = new System.Windows.Forms.TextBox();
+            this.textResult = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderXV1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderZV2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderZV1)).BeginInit();
@@ -169,7 +177,6 @@
             this.txtXV1.Size = new System.Drawing.Size(74, 36);
             this.txtXV1.TabIndex = 6;
             this.txtXV1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtXV1.Validating += new System.ComponentModel.CancelEventHandler(this.txtXV1_Validating);
             // 
             // txtYV1
             // 
@@ -181,7 +188,6 @@
             this.txtYV1.Size = new System.Drawing.Size(74, 36);
             this.txtYV1.TabIndex = 7;
             this.txtYV1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtYV1.Validating += new System.ComponentModel.CancelEventHandler(this.txtYV1_Validating);
             // 
             // txtZV1
             // 
@@ -193,7 +199,6 @@
             this.txtZV1.Size = new System.Drawing.Size(74, 36);
             this.txtZV1.TabIndex = 8;
             this.txtZV1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtZV1.Validating += new System.ComponentModel.CancelEventHandler(this.txtZV1_Validating);
             // 
             // txtXV2
             // 
@@ -205,7 +210,6 @@
             this.txtXV2.Size = new System.Drawing.Size(74, 36);
             this.txtXV2.TabIndex = 9;
             this.txtXV2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtXV2.Validating += new System.ComponentModel.CancelEventHandler(this.txtXV2_Validating);
             // 
             // txtYV2
             // 
@@ -217,7 +221,6 @@
             this.txtYV2.Size = new System.Drawing.Size(74, 36);
             this.txtYV2.TabIndex = 10;
             this.txtYV2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtYV2.Validating += new System.ComponentModel.CancelEventHandler(this.txtYV2_Validating);
             // 
             // txtZV2
             // 
@@ -229,7 +232,6 @@
             this.txtZV2.Size = new System.Drawing.Size(74, 36);
             this.txtZV2.TabIndex = 11;
             this.txtZV2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtZV2.Validating += new System.ComponentModel.CancelEventHandler(this.txtZV2_Validating);
             // 
             // XV1
             // 
@@ -320,9 +322,9 @@
             this.label2.ForeColor = System.Drawing.Color.SpringGreen;
             this.label2.Location = new System.Drawing.Point(830, 191);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 48);
+            this.label2.Size = new System.Drawing.Size(161, 48);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Result";
+            this.label2.Text = "Rezultat";
             // 
             // txtResult
             // 
@@ -332,7 +334,7 @@
             this.txtResult.BackColor = System.Drawing.Color.Transparent;
             this.txtResult.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResult.ForeColor = System.Drawing.Color.Red;
-            this.txtResult.Location = new System.Drawing.Point(636, 240);
+            this.txtResult.Location = new System.Drawing.Point(571, 240);
             this.txtResult.Name = "txtResult";
             this.txtResult.Size = new System.Drawing.Size(116, 38);
             this.txtResult.TabIndex = 20;
@@ -363,6 +365,102 @@
             // 
             this.errorProviderXV2.ContainerControl = this;
             // 
+            // labelZ
+            // 
+            this.labelZ.AutoSize = true;
+            this.labelZ.BackColor = System.Drawing.Color.Transparent;
+            this.labelZ.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelZ.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelZ.Location = new System.Drawing.Point(1042, 352);
+            this.labelZ.Name = "labelZ";
+            this.labelZ.Size = new System.Drawing.Size(57, 65);
+            this.labelZ.TabIndex = 26;
+            this.labelZ.Text = "Z";
+            // 
+            // labelY
+            // 
+            this.labelY.AutoSize = true;
+            this.labelY.BackColor = System.Drawing.Color.Transparent;
+            this.labelY.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelY.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelY.Location = new System.Drawing.Point(878, 352);
+            this.labelY.Name = "labelY";
+            this.labelY.Size = new System.Drawing.Size(57, 65);
+            this.labelY.TabIndex = 25;
+            this.labelY.Text = "Y";
+            // 
+            // labelX
+            // 
+            this.labelX.AutoSize = true;
+            this.labelX.BackColor = System.Drawing.Color.Transparent;
+            this.labelX.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelX.Location = new System.Drawing.Point(729, 352);
+            this.labelX.Name = "labelX";
+            this.labelX.Size = new System.Drawing.Size(59, 65);
+            this.labelX.TabIndex = 24;
+            this.labelX.Text = "X";
+            // 
+            // txtResultZ
+            // 
+            this.txtResultZ.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.txtResultZ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtResultZ.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultZ.Location = new System.Drawing.Point(969, 366);
+            this.txtResultZ.Name = "txtResultZ";
+            this.txtResultZ.ReadOnly = true;
+            this.txtResultZ.Size = new System.Drawing.Size(74, 36);
+            this.txtResultZ.TabIndex = 23;
+            this.txtResultZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtResultY
+            // 
+            this.txtResultY.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.txtResultY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtResultY.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultY.Location = new System.Drawing.Point(803, 366);
+            this.txtResultY.Name = "txtResultY";
+            this.txtResultY.ReadOnly = true;
+            this.txtResultY.Size = new System.Drawing.Size(74, 36);
+            this.txtResultY.TabIndex = 22;
+            this.txtResultY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtResultX
+            // 
+            this.txtResultX.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.txtResultX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtResultX.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultX.Location = new System.Drawing.Point(653, 366);
+            this.txtResultX.Name = "txtResultX";
+            this.txtResultX.ReadOnly = true;
+            this.txtResultX.Size = new System.Drawing.Size(74, 36);
+            this.txtResultX.TabIndex = 21;
+            this.txtResultX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtNormVector
+            // 
+            this.txtNormVector.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.txtNormVector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNormVector.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNormVector.Location = new System.Drawing.Point(775, 310);
+            this.txtNormVector.Name = "txtNormVector";
+            this.txtNormVector.ReadOnly = true;
+            this.txtNormVector.Size = new System.Drawing.Size(74, 36);
+            this.txtNormVector.TabIndex = 27;
+            this.txtNormVector.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textResult
+            // 
+            this.textResult.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textResult.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textResult.Location = new System.Drawing.Point(970, 310);
+            this.textResult.Name = "textResult";
+            this.textResult.ReadOnly = true;
+            this.textResult.Size = new System.Drawing.Size(74, 36);
+            this.textResult.TabIndex = 28;
+            this.textResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // VectorOps
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -370,7 +468,15 @@
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1173, 624);
+            this.ClientSize = new System.Drawing.Size(1173, 622);
+            this.Controls.Add(this.textResult);
+            this.Controls.Add(this.txtNormVector);
+            this.Controls.Add(this.labelZ);
+            this.Controls.Add(this.labelY);
+            this.Controls.Add(this.labelX);
+            this.Controls.Add(this.txtResultZ);
+            this.Controls.Add(this.txtResultY);
+            this.Controls.Add(this.txtResultX);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -441,6 +547,14 @@
         private System.Windows.Forms.ErrorProvider errorProviderYV1;
         private System.Windows.Forms.ErrorProvider errorProviderYV2;
         private System.Windows.Forms.ErrorProvider errorProviderXV2;
+        private System.Windows.Forms.Label labelZ;
+        private System.Windows.Forms.Label labelY;
+        private System.Windows.Forms.Label labelX;
+        private System.Windows.Forms.TextBox txtResultZ;
+        private System.Windows.Forms.TextBox txtResultY;
+        private System.Windows.Forms.TextBox txtResultX;
+        private System.Windows.Forms.TextBox txtNormVector;
+        private System.Windows.Forms.TextBox textResult;
     }
 }
 

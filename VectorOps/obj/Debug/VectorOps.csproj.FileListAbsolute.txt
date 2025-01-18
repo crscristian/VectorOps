@@ -8,3 +8,6 @@ D:\VisulaStudioWorkplace\VectorOps\VectorOps\obj\Debug\VectorOps.csproj.CoreComp
 D:\VisulaStudioWorkplace\VectorOps\VectorOps\obj\Debug\VectorOps.exe
 D:\VisulaStudioWorkplace\VectorOps\VectorOps\obj\Debug\VectorOps.pdb
 D:\VisulaStudioWorkplace\VectorOps\VectorOps\obj\Debug\VectorOps.VectorOps.resources
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\System.Numerics.Vectors.dll
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\System.Numerics.Vectors.xml
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\obj\Debug\VectorOps.csproj.Up2Date

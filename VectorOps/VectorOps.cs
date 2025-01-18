@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Numerics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VectorOps
@@ -23,23 +24,30 @@ namespace VectorOps
             ZV1.Visible = false;
             txtZV2.Visible = false;
             ZV2.Visible = false;
-
         }
-
+        //declaram variabile externe functiilor pentru a manipula intrariile celor 
         private void VectorOps_Load(object sender, EventArgs e)
         {
         //add options for select
             cmbOption.Items.Add("None");
-            cmbOption.Items.Add("Addition");
-            cmbOption.Items.Add("Subtraction");
-            cmbOption.Items.Add("Vector Norm");
-            cmbOption.Items.Add("Dot Product");
-            cmbOption.Items.Add("Cross Product");
-            cmbOption.Items.Add("Vector Rotation");
+            cmbOption.Items.Add("Adunare");
+            cmbOption.Items.Add("Scadere");
+            cmbOption.Items.Add("Modul Vector");
+            cmbOption.Items.Add("Produs Scalar");
+            cmbOption.Items.Add("Produs Vectorial");
+            cmbOption.Items.Add("Rotatie Vector");
          // Implicit selection (first option)
             cmbOption.SelectedIndex = 0; // Index 0 is "None"
-
+            txtResult.Visible = false;
+            txtResultX.Visible = false;
+            txtResultY.Visible = false;
+            txtResultZ.Visible = false;
+            labelX.Visible = false;
+            labelY.Visible = false;
+            labelZ.Visible = false;
+            txtNormVector.Visible = false;
             //test
+            textResult.Visible = false;
             txtResult.Font = new Font("Cambria Math", 18); // Font compatibil 
 
         }
@@ -63,241 +71,425 @@ namespace VectorOps
 
         private void cmbOption_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbOption.SelectedItem != null)
+            // Resetăm interfața
+            ResetUI();
+
+            if (cmbOption.SelectedItem == null) return;
+
+            string selectedOption = cmbOption.SelectedItem.ToString();
+
+            if (selectedOption == "None")
             {
-                switch(cmbOption.SelectedItem.ToString())
-                {
-                    case "None":
-                        txtResult.Visible = false;
-                        break;
-                    case "Addition":
-                        txtResult.Visible = true;
-                        txtResult.Text = "Vector a\u20D7 + b\u20D7:";
-                        if(txtZV1.Visible == true)
-                        {
-                            Addition(txtXV1.Text, txtXV2.Text, txtYV1.Text, txtYV2.Text, txtZV1.Text, txtZV2.Text);
-                        }
-                        else
-                        {
-                            Addition(txtXV1.Text, txtXV2.Text, txtYV1.Text, txtYV2.Text);
-                        }
-                        break;
-                    case "Subtraction":
-                        txtResult.Visible = true;
-                        txtResult.Text = "Vector a\u20D7 - b\u20D7:";
-                        break;
-                    case "Vector Norm":
-                        break;
-                    case "Dot Product":
-                        break;
-                    case "Cross Product":
-                        break;
-                    case "Vector Rotation":
-                        break;
-                }
+                return; // Nu facem nimic pentru opțiunea "None"
             }
 
+            // Validăm inputurile în funcție de opțiunea selectată
+            bool isValid;
+
+            if (selectedOption == "Modul Vector" || selectedOption == "Rotatie Vector")
+            {
+                // Doar Vector A trebuie completat
+                isValid = IsVectorAValid();
+            }
+            else
+            {
+                // Pentru celelalte opțiuni, trebuie completate Vector A și Vector B
+                isValid = IsVectorAValid() && IsVectorBValid();
+            }
+
+            if (!isValid)
+            {
+                cmbOption.SelectedIndex = 0; // Resetează la "None"
+                MessageBox.Show("Vă rugăm să completați câmpurile obligatorii.", "Avertizare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Gestionăm opțiunile
+            switch (selectedOption)
+            {
+                case "Adunare":
+                    SetUIForOperation("Vector a⃗ + b⃗:", true, true);
+                    textResult.Visible = false;
+                    if (txtZV1.Visible)
+                    {
+                        labelZ.Visible = true;
+                        txtResultZ.Visible = true;
+                        Addition(txtXV1.Text, txtXV2.Text, txtYV1.Text, txtYV2.Text, txtZV1.Text, txtZV2.Text);
+                    }
+                    else
+                    {
+                        labelZ.Visible = false;
+                        txtResultZ.Visible = false;
+                        Addition(txtXV1.Text, txtXV2.Text, txtYV1.Text, txtYV2.Text);
+                    }
+                    break;
+
+                case "Scadere":
+                    SetUIForOperation("Vector a⃗ - b⃗:", true, true);
+                    textResult.Visible = false;
+                    if (txtZV1.Visible)
+                    {
+                        labelZ.Visible = true;
+                        txtResultZ.Visible = true;
+                        Subtraction(txtXV1.Text, txtXV2.Text, txtYV1.Text, txtYV2.Text, txtZV1.Text, txtZV2.Text);
+                    }
+                    else
+                    {
+                        labelZ.Visible = false;
+                        txtResultZ.Visible = false;
+                        Subtraction(txtXV1.Text, txtXV2.Text, txtYV1.Text, txtYV2.Text);
+                    }
+                    break;
+
+                case "Modul Vector":
+                    SetUIForOperation("Modul |a⃗|:", false, false);
+                    textResult.Visible=false;
+                    if (txtZV1.Visible)
+                    {
+                        VectorNorm(txtXV1.Text, txtYV1.Text, txtZV1.Text);
+                    }
+                    else
+                    {
+                        VectorNorm(txtXV1.Text, txtYV1.Text);
+                    }
+                    break;
+
+                case "Produs Scalar":
+                    SetUIForOperation("Produs Scalar (a⃗ ⋅ b⃗):", true, false);
+                    if (txtZV1.Visible)
+                    {
+                        DotProduct(txtXV1.Text, txtXV2.Text, txtYV1.Text, txtYV2.Text, txtZV1.Text, txtZV2.Text);
+                    }
+                    else
+                    {
+                        DotProduct(txtXV1.Text, txtXV2.Text, txtYV1.Text, txtYV2.Text);
+                    }
+                    break;
+
+                case "Produs Vectorial":
+                    SetUIForOperation("Produs Vectorial (a⃗ × b⃗):", true, true);
+                    if (txtZV1.Visible)
+                    {
+                        CrossProduct(txtXV1.Text, txtXV2.Text, txtYV1.Text, txtYV2.Text, txtZV1.Text, txtZV2.Text);
+                    }
+                    else
+                    {
+                        CrossProduct(txtXV1.Text, txtXV2.Text, txtYV1.Text, txtYV2.Text);
+                    }
+                    break;
+
+                default:
+                    MessageBox.Show("Opțiune necunoscută!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
+        }
+
+        // Funcție pentru validarea completării câmpurilor Vector A
+        private bool IsVectorAValid()
+        {
+            return !string.IsNullOrWhiteSpace(txtXV1.Text) &&
+                   !string.IsNullOrWhiteSpace(txtYV1.Text) &&
+                   (!txtZV1.Visible || !string.IsNullOrWhiteSpace(txtZV1.Text));
+        }
+
+        // Funcție pentru validarea completării câmpurilor Vector B
+        private bool IsVectorBValid()
+        {
+            return !string.IsNullOrWhiteSpace(txtXV2.Text) &&
+                   !string.IsNullOrWhiteSpace(txtYV2.Text) &&
+                   (!txtZV2.Visible || !string.IsNullOrWhiteSpace(txtZV2.Text));
+        }
+
+        // Funcție pentru resetarea interfeței
+        private void ResetUI()
+        {
+            txtResult.Visible = false;
+            txtResultX.Visible = false;
+            txtResultY.Visible = false;
+            txtResultZ.Visible = false;
+            txtNormVector.Visible = false;
+
+            labelX.Visible = false;
+            labelY.Visible = false;
+            labelZ.Visible = false;
+        }
+
+        // Funcție pentru configurarea UI pentru o operație
+        private void SetUIForOperation(string resultText, bool showVectorB, bool showResultZ)
+        {
+            txtResult.Visible = true;
+            txtResult.Text = resultText;
+
+            txtResultX.Visible = true;
+            txtResultY.Visible = true;
+            labelX.Visible = true;
+            labelY.Visible = true;
+
+            if (showResultZ)
+            {
+                txtResultZ.Visible = true;
+                labelZ.Visible = true;
+            }
+
+            if (showVectorB)
+            {
+                txtXV2.Visible = true;
+                txtYV2.Visible = true;
+                XV2.Visible = true;
+                YV2.Visible = true;
+
+                if (txtZV1.Visible)
+                {
+                    txtZV2.Visible = true;
+                    ZV2.Visible = true;
+                }
+            }
         }
 
         public void Addition(string XV1, string XV2, string YV1, string YV2)
         {
+            float x1 = ParseStringToFloat(XV1);
+            float y1 = ParseStringToFloat(YV1);
 
+            float x2 = ParseStringToFloat(XV2);
+            float y2 = ParseStringToFloat(YV2);
+            //utilizand clasa Vector2D definita vom crea doi vectori bidimnesionali si vom efectua operatia de adunare utilizand metoda din interiorul clasei
+            Vector2D vector1 = new Vector2D(x1, y1);
+            Vector2D vector2 = new Vector2D(x2, y2);
+            Vector2D suma = Vector2D.Adunare(vector1, vector2);
+            Console.WriteLine($"Suma: {suma}");
+            //afisam rezultatul in text boxurile
+            txtResultX.Text = suma.X.ToString();
+            txtResultY.Text = suma.Y.ToString();
         }
 
         public void Addition(string XV1, string XV2, string YV1, string YV2, string ZV1, string ZV2)
         {
+            float x1 = ParseStringToFloat(XV1);
+            float y1 = ParseStringToFloat(YV1);
+            float z1 = ParseStringToFloat(ZV1);
+
+            float x2 = ParseStringToFloat(XV2);
+            float y2 = ParseStringToFloat(YV2);
+            float z2 = ParseStringToFloat(ZV2);
+            //utilizand clasa Vector2D definita vom crea doi vectori bidimnesionali si vom efectua operatia de adunare utilizand metoda din interiorul clasei
+            Vector3D vector1 = new Vector3D(x1, y1, z1);
+            Vector3D vector2 = new Vector3D(x2, y2, z2);
+            Vector3D suma = Vector3D.Adunare(vector1, vector2);
+            Console.WriteLine($"Suma: {suma}");
+            //afisam rezultatul in text boxurile
+            txtResultX.Text = suma.X.ToString();
+            txtResultY.Text = suma.Y.ToString();
+            txtResultZ.Text = suma.Z.ToString();
+        }
+
+        public void Subtraction(string XV1, string XV2, string YV1, string YV2)
+        {
+            float x1 = ParseStringToFloat(XV1);
+            float y1 = ParseStringToFloat(YV1);
+
+            float x2 = ParseStringToFloat(XV2);
+            float y2 = ParseStringToFloat(YV2);
+            //utilizand clasa Vector2D definita vom crea doi vectori bidimnesionali si vom efectua operatia de adunare utilizand metoda din interiorul clasei
+            Vector2D vector1 = new Vector2D(x1, y1);
+            Vector2D vector2 = new Vector2D(x2, y2);
+            Vector2D diferenta = Vector2D.Scadere(vector1, vector2);
+            Console.WriteLine($"diferenta: {diferenta}");
+            //afisam rezultatul in text boxurile
+            txtResultX.Text = diferenta.X.ToString();
+            txtResultY.Text = diferenta.Y.ToString();
+        }
+
+        public void Subtraction(string XV1, string XV2, string YV1, string YV2, string ZV1, string ZV2)
+        {
+            float x1 = ParseStringToFloat(XV1);
+            float y1 = ParseStringToFloat(YV1);
+            float z1 = ParseStringToFloat(ZV1);
+
+            float x2 = ParseStringToFloat(XV2);
+            float y2 = ParseStringToFloat(YV2);
+            float z2 = ParseStringToFloat(ZV2);
+            //utilizand clasa Vector3D definita vom crea doi vectori bidimnesionali si vom efectua operatia de adunare utilizand metoda din interiorul clasei
+            Vector3D vector1 = new Vector3D(x1, y1, z1);
+            Vector3D vector2 = new Vector3D(x2, y2, z2);
+            Vector3D diferenta = Vector3D.Scadere(vector1, vector2);
+            Console.WriteLine($"diferenta: {diferenta}");
+            //afisam rezultatul in text boxurile
+            txtResultX.Text = diferenta.X.ToString(); 
+            txtResultY.Text = diferenta.Y.ToString();
+            txtResultZ.Text = diferenta.Z.ToString();
+        }
+
+        public void VectorNorm(string XV1, string YV1)
+        {
+            txtResultX.Visible = false;
+            txtResultY.Visible = false;
+            labelX.Visible = false;
+            labelY.Visible = false;
+            float x1 = ParseStringToFloat(XV1);
+            float y1 = ParseStringToFloat(YV1);
+            Vector2D vector1 = new Vector2D(x1, y1);
+            float modul = vector1.Modul();
+            // Afișarea rezultatului în consolă cu două zecimale
+            Console.WriteLine($"Modulul vectorului ({x1}, {y1}) este: {modul:F2}");
+            txtNormVector.Visible = true;
+            txtNormVector.Text = modul.ToString("F2");
 
         }
 
-        private void txtXV1_Validating(object sender, CancelEventArgs e)
+        public void VectorNorm(string XV1, string YV1, string ZV1)
         {
-            string input = txtXV1.Text.Trim();
-            // Verifică dacă inputul este un număr întreg valid
-            if (int.TryParse(input, out _))
-            {
-                // Inputul este un număr întreg valid
-                errorProviderXV1.SetError(txtXV1, string.Empty);
-            }
-            // Verifică dacă inputul este un număr float valid
-            else if (float.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out _))
-            {
-                // Inputul este un număr float valid
-                errorProviderXV1.SetError(txtXV1, string.Empty);
-            }
-            // Verifică dacă inputul este o fracție validă
-            else if (EsteFractieValida(input))
-            {
-                // Inputul este o fracție validă
-                errorProviderXV1.SetError(txtXV1, string.Empty);
-            }
-            else
-            {
-                // Inputul nu este valid
-                errorProviderXV1.SetError(txtXV1, "Introduceți un număr întreg, un număr zecimal sau o fracție validă.");
-                e.Cancel = true; // Anulează evenimentul, menținând focusul pe TextBox
-            }
+            txtResultX.Visible = false;
+            txtResultY.Visible = false;
+            txtResultZ.Visible = false;
+            labelX.Visible = false;
+            labelY.Visible = false;
+            labelZ.Visible = false;
+            float x1 = ParseStringToFloat(XV1);
+            float y1 = ParseStringToFloat(YV1);
+            float z1 = ParseStringToFloat(ZV1);
+            Vector3D vector1 = new Vector3D(x1, y1, z1);
+            float modul = vector1.Modul();
+            // Afișarea rezultatului în consolă cu două zecimale
+            Console.WriteLine($"Modulul vectorului ({x1}, {y1}, {z1}) este: {modul:F2}");
+            txtNormVector.Visible = true;
+            txtNormVector.Text = modul.ToString("F2");
         }
 
-        private bool EsteFractieValida(string input)
+        public void DotProduct(string XV1, string XV2, string YV1, string YV2)
         {
-            // Verifică dacă inputul conține caracterul '/'
+            float x1 = ParseStringToFloat(XV1);
+            float y1 = ParseStringToFloat(YV1);
+
+            float x2 = ParseStringToFloat(XV2);
+            float y2 = ParseStringToFloat(YV2);
+
+            // Calculăm produsul scalar
+            float produsScalar = (x1 * x2) + (y1 * y2);
+            Console.WriteLine($"produsScalar: {produsScalar}");
+            textResult.Visible = true;
+            txtNormVector.Visible = false;
+            textResult.Text = produsScalar.ToString("F2");
+
+            // Ascundem componentele vectorului rezultat
+            txtResultX.Visible = false;
+            txtResultY.Visible = false;
+            txtResultZ.Visible = false;
+
+            labelX.Visible = false;
+            labelY.Visible = false;
+            labelZ.Visible = false;
+        }
+
+        public void DotProduct(string XV1, string XV2, string YV1, string YV2, string ZV1, string ZV2)
+        {
+            float x1 = ParseStringToFloat(XV1);
+            float y1 = ParseStringToFloat(YV1);
+            float z1 = ParseStringToFloat(ZV1);
+
+            float x2 = ParseStringToFloat(XV2);
+            float y2 = ParseStringToFloat(YV2);
+            float z2 = ParseStringToFloat(ZV2);
+
+            // Calculăm produsul scalar
+            float produsScalar = (x1 * x2) + (y1 * y2) + (z1 * z2);
+
+            // Afișăm rezultatul în textResult
+            textResult.Visible = true;
+            txtNormVector.Visible = false;
+            textResult.Text = produsScalar.ToString("F2");
+            Console.WriteLine($"produsScalar: {produsScalar}");
+            // Ascundem componentele vectorului rezultat
+            txtResultX.Visible = false;
+            txtResultY.Visible = false;
+            txtResultZ.Visible = false;
+
+            labelX.Visible = false;
+            labelY.Visible = false;
+            labelZ.Visible = false;
+        }
+
+        public void CrossProduct(string XV1, string XV2, string YV1, string YV2, string ZV1, string ZV2)
+        {
+            float x1 = ParseStringToFloat(XV1);
+            float y1 = ParseStringToFloat(YV1);
+            float z1 = ParseStringToFloat(ZV1);
+
+            float x2 = ParseStringToFloat(XV2);
+            float y2 = ParseStringToFloat(YV2);
+            float z2 = ParseStringToFloat(ZV2);
+            Vector3D vector1 = new Vector3D(x1, y1, z1);
+            Vector3D vector2 = new Vector3D(x2, y2, z2);
+            Vector3D produsVectorial = Vector3D.ProdusVectorial(vector1, vector2);
+            //afisam rezultatul in text boxurile
+            Console.WriteLine($"produsVectorial: {produsVectorial}");
+            txtResultX.Text = produsVectorial.X.ToString("F2");
+            txtResultY.Text = produsVectorial.Y.ToString("F2");
+            txtResultZ.Text = produsVectorial.Z.ToString("F2");
+            textResult.Visible = false;
+        }
+
+        public void CrossProduct(string XV1, string XV2, string YV1, string YV2)
+        {
+            // Convertim intrările în float-uri
+            float x1 = ParseStringToFloat(XV1);
+            float y1 = ParseStringToFloat(YV1);
+
+            float x2 = ParseStringToFloat(XV2);
+            float y2 = ParseStringToFloat(YV2);
+
+            // Calculăm produsul vectorial asociat (scalar pentru vectori 2D)
+            float produsVectorial = (x1 * y2) - (y1 * x2);
+            Console.WriteLine($"produsVectorial: {produsVectorial}");
+            textResult.Visible = true;
+            txtNormVector.Visible = false;
+            textResult.Text = produsVectorial.ToString("F2");
+
+            // Ascundem componentele vectorului rezultat, deoarece nu se aplică pentru vectori 2D
+            txtResultX.Visible = false;
+            txtResultY.Visible = false;
+            txtResultZ.Visible = false;
+
+            labelX.Visible = false;
+            labelY.Visible = false;
+            labelZ.Visible = false;
+        }
+
+
+        private float ParseStringToFloat(string input)
+        {
+            // Elimină spațiile albe de la începutul și sfârșitul șirului
+            input = input.Trim();
+
+            // Verifică dacă șirul conține o fracție de forma "numărător/numitor"
             if (input.Contains("/"))
             {
-                string[] parti = input.Split('/');
-                if (parti.Length == 2)
+                string[] parts = input.Split('/');
+                if (parts.Length == 2 &&
+                    float.TryParse(parts[0], NumberStyles.Float, CultureInfo.InvariantCulture, out float numerator) &&
+                    float.TryParse(parts[1], NumberStyles.Float, CultureInfo.InvariantCulture, out float denominator))
                 {
-                    // Verifică dacă ambele părți sunt numere întregi valide și numitorul nu este zero
-                    if (int.TryParse(parti[0].Trim(), out _) && int.TryParse(parti[1].Trim(), out int numitor) && numitor != 0)
-                    {
-                        return true;
-                    }
+                    if (denominator == 0)
+                        throw new DivideByZeroException("Numitorul nu poate fi zero.");
+
+                    return numerator / denominator;
+                }
+                else
+                {
+                    throw new FormatException("Formatul fracției este invalid.");
                 }
             }
-            return false;
-        }
-
-        private void txtYV1_Validating(object sender, CancelEventArgs e)
-        {
-            string input = txtYV1.Text.Trim();
-            // Verifică dacă inputul este un număr întreg valid
-            if (int.TryParse(input, out _))
-            {
-                // Inputul este un număr întreg valid
-                errorProviderYV1.SetError(txtYV1, string.Empty);
-            }
-            // Verifică dacă inputul este un număr float valid
-            else if (float.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out _))
-            {
-                // Inputul este un număr float valid
-                errorProviderYV1.SetError(txtYV1, string.Empty);
-            }
-            // Verifică dacă inputul este o fracție validă
-            else if (EsteFractieValida(input))
-            {
-                // Inputul este o fracție validă
-                errorProviderYV1.SetError(txtYV1, string.Empty);
-            }
             else
             {
-                // Inputul nu este valid
-                errorProviderYV1.SetError(txtYV1, "Introduceți un număr întreg, un număr zecimal sau o fracție validă.");
-                e.Cancel = true; // Anulează evenimentul, menținând focusul pe TextBox
-            }
-        }
-
-        private void txtZV1_Validating(object sender, CancelEventArgs e)
-        {
-            string input = txtZV1.Text.Trim();
-            // Verifică dacă inputul este un număr întreg valid
-            if (int.TryParse(input, out _))
-            {
-                // Inputul este un număr întreg valid
-                errorProviderZV1.SetError(txtZV1, string.Empty);
-            }
-            // Verifică dacă inputul este un număr float valid
-            else if (float.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out _))
-            {
-                // Inputul este un număr float valid
-                errorProviderZV1.SetError(txtZV1, string.Empty);
-            }
-            // Verifică dacă inputul este o fracție validă
-            else if (EsteFractieValida(input))
-            {
-                // Inputul este o fracție validă
-                errorProviderZV1.SetError(txtZV1, string.Empty);
-            }
-            else
-            {
-                // Inputul nu este valid
-                errorProviderZV1.SetError(txtZV1, "Introduceți un număr întreg, un număr zecimal sau o fracție validă.");
-                e.Cancel = true; // Anulează evenimentul, menținând focusul pe TextBox
-            }
-        }
-
-        private void txtXV2_Validating(object sender, CancelEventArgs e)
-        {
-            string input = txtXV2.Text.Trim();
-            // Verifică dacă inputul este un număr întreg valid
-            if (int.TryParse(input, out _))
-            {
-                // Inputul este un număr întreg valid
-                errorProviderXV2.SetError(txtXV1, string.Empty);
-            }
-            // Verifică dacă inputul este un număr float valid
-            else if (float.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out _))
-            {
-                // Inputul este un număr float valid
-                errorProviderXV2.SetError(txtXV2, string.Empty);
-            }
-            // Verifică dacă inputul este o fracție validă
-            else if (EsteFractieValida(input))
-            {
-                // Inputul este o fracție validă
-                errorProviderXV2.SetError(txtXV2, string.Empty);
-            }
-            else
-            {
-                // Inputul nu este valid
-                errorProviderXV2.SetError(txtXV2, "Introduceți un număr întreg, un număr zecimal sau o fracție validă.");
-                e.Cancel = true; // Anulează evenimentul, menținând focusul pe TextBox
-            }
-        }
-
-        private void txtYV2_Validating(object sender, CancelEventArgs e)
-        {
-            string input = txtYV2.Text.Trim();
-            // Verifică dacă inputul este un număr întreg valid
-            if (int.TryParse(input, out _))
-            {
-                // Inputul este un număr întreg valid
-                errorProviderYV2.SetError(txtYV2, string.Empty);
-            }
-            // Verifică dacă inputul este un număr float valid
-            else if (float.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out _))
-            {
-                // Inputul este un număr float valid
-                errorProviderYV2.SetError(txtYV2, string.Empty);
-            }
-            // Verifică dacă inputul este o fracție validă
-            else if (EsteFractieValida(input))
-            {
-                // Inputul este o fracție validă
-                errorProviderYV2.SetError(txtYV2, string.Empty);
-            }
-            else
-            {
-                // Inputul nu este valid
-                errorProviderYV2.SetError(txtYV2, "Introduceți un număr întreg, un număr zecimal sau o fracție validă.");
-                e.Cancel = true; // Anulează evenimentul, menținând focusul pe TextBox
-            }
-        }
-
-        private void txtZV2_Validating(object sender, CancelEventArgs e)
-        {
-            string input = txtZV2.Text.Trim();
-            // Verifică dacă inputul este un număr întreg valid
-            if (int.TryParse(input, out _))
-            {
-                // Inputul este un număr întreg valid
-                errorProviderZV2.SetError(txtZV2, string.Empty);
-            }
-            // Verifică dacă inputul este un număr float valid
-            else if (float.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out _))
-            {
-                // Inputul este un număr float valid
-                errorProviderZV2.SetError(txtZV2, string.Empty);
-            }
-            // Verifică dacă inputul este o fracție validă
-            else if (EsteFractieValida(input))
-            {
-                // Inputul este o fracție validă
-                errorProviderZV2.SetError(txtZV2, string.Empty);
-            }
-            else
-            {
-                // Inputul nu este valid
-                errorProviderZV2.SetError(txtZV2, "Introduceți un număr întreg, un număr zecimal sau o fracție validă.");
-                e.Cancel = true; // Anulează evenimentul, menținând focusul pe TextBox
+                // Încearcă să convertească șirul direct într-un float
+                if (float.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out float result))
+                {
+                    return result;
+                }
+                else
+                {
+                    throw new FormatException("Șirul nu este un număr valid.");
+                }
             }
         }
     }
