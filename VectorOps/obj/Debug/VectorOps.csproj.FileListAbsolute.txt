@@ -14,3 +14,11 @@ D:\VisulaStudioWorkplace\VectorOps\VectorOps\obj\Debug\VectorOps.csproj.Up2Date
 D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\OpenTK.dll
 D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\OpenTK.pdb
 D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\OpenTK.xml
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\System.Buffers.dll
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\System.Memory.dll
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\System.Buffers.xml
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\System.Memory.xml
+D:\VisulaStudioWorkplace\VectorOps\VectorOps\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

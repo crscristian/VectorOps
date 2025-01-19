@@ -80,7 +80,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblTitle.Location = new System.Drawing.Point(428, 43);
+            this.lblTitle.Location = new System.Drawing.Point(482, 54);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(403, 65);
             this.lblTitle.TabIndex = 0;
@@ -96,7 +96,8 @@
             this.radVector2D.Checked = true;
             this.radVector2D.Font = new System.Drawing.Font("Segoe UI Black", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radVector2D.ForeColor = System.Drawing.Color.Orange;
-            this.radVector2D.Location = new System.Drawing.Point(116, 105);
+            this.radVector2D.Location = new System.Drawing.Point(130, 131);
+            this.radVector2D.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radVector2D.Name = "radVector2D";
             this.radVector2D.Size = new System.Drawing.Size(81, 78);
             this.radVector2D.TabIndex = 1;
@@ -113,7 +114,8 @@
             this.radVector3D.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.radVector3D.Font = new System.Drawing.Font("Segoe UI Black", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radVector3D.ForeColor = System.Drawing.Color.Orange;
-            this.radVector3D.Location = new System.Drawing.Point(215, 105);
+            this.radVector3D.Location = new System.Drawing.Point(242, 131);
+            this.radVector3D.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radVector3D.Name = "radVector3D";
             this.radVector3D.Size = new System.Drawing.Size(81, 78);
             this.radVector3D.TabIndex = 3;
@@ -135,11 +137,12 @@
             this.cmbOption.FormattingEnabled = true;
             this.cmbOption.ImeMode = System.Windows.Forms.ImeMode.On;
             this.cmbOption.IntegralHeight = false;
-            this.cmbOption.Location = new System.Drawing.Point(51, 191);
+            this.cmbOption.Location = new System.Drawing.Point(57, 239);
+            this.cmbOption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbOption.MaxDropDownItems = 2;
             this.cmbOption.Name = "cmbOption";
             this.cmbOption.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmbOption.Size = new System.Drawing.Size(284, 46);
+            this.cmbOption.Size = new System.Drawing.Size(319, 46);
             this.cmbOption.TabIndex = 0;
             this.cmbOption.SelectedIndexChanged += new System.EventHandler(this.cmbOption_SelectedIndexChanged);
             // 
@@ -149,7 +152,7 @@
             this.Vector1.BackColor = System.Drawing.Color.Transparent;
             this.Vector1.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Vector1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.Vector1.Location = new System.Drawing.Point(51, 330);
+            this.Vector1.Location = new System.Drawing.Point(57, 412);
             this.Vector1.Name = "Vector1";
             this.Vector1.Size = new System.Drawing.Size(131, 38);
             this.Vector1.TabIndex = 4;
@@ -161,7 +164,7 @@
             this.Vector2.BackColor = System.Drawing.Color.Transparent;
             this.Vector2.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Vector2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.Vector2.Location = new System.Drawing.Point(49, 461);
+            this.Vector2.Location = new System.Drawing.Point(55, 576);
             this.Vector2.Name = "Vector2";
             this.Vector2.Size = new System.Drawing.Size(131, 38);
             this.Vector2.TabIndex = 5;
@@ -172,9 +175,10 @@
             this.txtXV1.BackColor = System.Drawing.Color.SkyBlue;
             this.txtXV1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtXV1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXV1.Location = new System.Drawing.Point(66, 393);
+            this.txtXV1.Location = new System.Drawing.Point(74, 491);
+            this.txtXV1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtXV1.Name = "txtXV1";
-            this.txtXV1.Size = new System.Drawing.Size(74, 36);
+            this.txtXV1.Size = new System.Drawing.Size(83, 36);
             this.txtXV1.TabIndex = 6;
             this.txtXV1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -183,9 +187,10 @@
             this.txtYV1.BackColor = System.Drawing.Color.SkyBlue;
             this.txtYV1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYV1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYV1.Location = new System.Drawing.Point(215, 393);
+            this.txtYV1.Location = new System.Drawing.Point(242, 491);
+            this.txtYV1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtYV1.Name = "txtYV1";
-            this.txtYV1.Size = new System.Drawing.Size(74, 36);
+            this.txtYV1.Size = new System.Drawing.Size(83, 36);
             this.txtYV1.TabIndex = 7;
             this.txtYV1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -194,9 +199,10 @@
             this.txtZV1.BackColor = System.Drawing.Color.SkyBlue;
             this.txtZV1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtZV1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtZV1.Location = new System.Drawing.Point(381, 393);
+            this.txtZV1.Location = new System.Drawing.Point(429, 491);
+            this.txtZV1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtZV1.Name = "txtZV1";
-            this.txtZV1.Size = new System.Drawing.Size(74, 36);
+            this.txtZV1.Size = new System.Drawing.Size(83, 36);
             this.txtZV1.TabIndex = 8;
             this.txtZV1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -205,9 +211,10 @@
             this.txtXV2.BackColor = System.Drawing.Color.SkyBlue;
             this.txtXV2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtXV2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXV2.Location = new System.Drawing.Point(66, 523);
+            this.txtXV2.Location = new System.Drawing.Point(74, 654);
+            this.txtXV2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtXV2.Name = "txtXV2";
-            this.txtXV2.Size = new System.Drawing.Size(74, 36);
+            this.txtXV2.Size = new System.Drawing.Size(83, 36);
             this.txtXV2.TabIndex = 9;
             this.txtXV2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -216,9 +223,10 @@
             this.txtYV2.BackColor = System.Drawing.Color.SkyBlue;
             this.txtYV2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYV2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYV2.Location = new System.Drawing.Point(215, 523);
+            this.txtYV2.Location = new System.Drawing.Point(242, 654);
+            this.txtYV2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtYV2.Name = "txtYV2";
-            this.txtYV2.Size = new System.Drawing.Size(74, 36);
+            this.txtYV2.Size = new System.Drawing.Size(83, 36);
             this.txtYV2.TabIndex = 10;
             this.txtYV2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -227,9 +235,10 @@
             this.txtZV2.BackColor = System.Drawing.Color.SkyBlue;
             this.txtZV2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtZV2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtZV2.Location = new System.Drawing.Point(381, 523);
+            this.txtZV2.Location = new System.Drawing.Point(429, 654);
+            this.txtZV2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtZV2.Name = "txtZV2";
-            this.txtZV2.Size = new System.Drawing.Size(74, 36);
+            this.txtZV2.Size = new System.Drawing.Size(83, 36);
             this.txtZV2.TabIndex = 11;
             this.txtZV2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -239,7 +248,7 @@
             this.XV1.BackColor = System.Drawing.Color.Transparent;
             this.XV1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XV1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.XV1.Location = new System.Drawing.Point(141, 379);
+            this.XV1.Location = new System.Drawing.Point(159, 474);
             this.XV1.Name = "XV1";
             this.XV1.Size = new System.Drawing.Size(59, 65);
             this.XV1.TabIndex = 12;
@@ -251,7 +260,7 @@
             this.YV1.BackColor = System.Drawing.Color.Transparent;
             this.YV1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YV1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.YV1.Location = new System.Drawing.Point(291, 379);
+            this.YV1.Location = new System.Drawing.Point(327, 474);
             this.YV1.Name = "YV1";
             this.YV1.Size = new System.Drawing.Size(57, 65);
             this.YV1.TabIndex = 13;
@@ -263,7 +272,7 @@
             this.ZV1.BackColor = System.Drawing.Color.Transparent;
             this.ZV1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZV1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ZV1.Location = new System.Drawing.Point(454, 379);
+            this.ZV1.Location = new System.Drawing.Point(511, 474);
             this.ZV1.Name = "ZV1";
             this.ZV1.Size = new System.Drawing.Size(57, 65);
             this.ZV1.TabIndex = 14;
@@ -275,7 +284,7 @@
             this.XV2.BackColor = System.Drawing.Color.Transparent;
             this.XV2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XV2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.XV2.Location = new System.Drawing.Point(141, 509);
+            this.XV2.Location = new System.Drawing.Point(159, 636);
             this.XV2.Name = "XV2";
             this.XV2.Size = new System.Drawing.Size(59, 65);
             this.XV2.TabIndex = 15;
@@ -287,7 +296,7 @@
             this.YV2.BackColor = System.Drawing.Color.Transparent;
             this.YV2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YV2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.YV2.Location = new System.Drawing.Point(291, 509);
+            this.YV2.Location = new System.Drawing.Point(327, 636);
             this.YV2.Name = "YV2";
             this.YV2.Size = new System.Drawing.Size(57, 65);
             this.YV2.TabIndex = 16;
@@ -299,7 +308,7 @@
             this.ZV2.BackColor = System.Drawing.Color.Transparent;
             this.ZV2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZV2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ZV2.Location = new System.Drawing.Point(454, 509);
+            this.ZV2.Location = new System.Drawing.Point(511, 636);
             this.ZV2.Name = "ZV2";
             this.ZV2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ZV2.Size = new System.Drawing.Size(57, 65);
@@ -309,9 +318,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(812, 240);
+            this.label1.Location = new System.Drawing.Point(914, 300);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 18;
             // 
             // label2
@@ -320,7 +329,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label2.Location = new System.Drawing.Point(830, 191);
+            this.label2.Location = new System.Drawing.Point(934, 239);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 48);
             this.label2.TabIndex = 19;
@@ -334,7 +343,7 @@
             this.txtResult.BackColor = System.Drawing.Color.Transparent;
             this.txtResult.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResult.ForeColor = System.Drawing.Color.Red;
-            this.txtResult.Location = new System.Drawing.Point(571, 240);
+            this.txtResult.Location = new System.Drawing.Point(642, 300);
             this.txtResult.Name = "txtResult";
             this.txtResult.Size = new System.Drawing.Size(116, 38);
             this.txtResult.TabIndex = 20;
@@ -371,7 +380,7 @@
             this.labelZ.BackColor = System.Drawing.Color.Transparent;
             this.labelZ.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelZ.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelZ.Location = new System.Drawing.Point(1042, 352);
+            this.labelZ.Location = new System.Drawing.Point(1172, 440);
             this.labelZ.Name = "labelZ";
             this.labelZ.Size = new System.Drawing.Size(57, 65);
             this.labelZ.TabIndex = 26;
@@ -383,7 +392,7 @@
             this.labelY.BackColor = System.Drawing.Color.Transparent;
             this.labelY.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelY.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelY.Location = new System.Drawing.Point(878, 352);
+            this.labelY.Location = new System.Drawing.Point(988, 440);
             this.labelY.Name = "labelY";
             this.labelY.Size = new System.Drawing.Size(57, 65);
             this.labelY.TabIndex = 25;
@@ -395,7 +404,7 @@
             this.labelX.BackColor = System.Drawing.Color.Transparent;
             this.labelX.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelX.Location = new System.Drawing.Point(729, 352);
+            this.labelX.Location = new System.Drawing.Point(820, 440);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(59, 65);
             this.labelX.TabIndex = 24;
@@ -406,10 +415,11 @@
             this.txtResultZ.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txtResultZ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResultZ.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultZ.Location = new System.Drawing.Point(969, 366);
+            this.txtResultZ.Location = new System.Drawing.Point(1090, 458);
+            this.txtResultZ.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtResultZ.Name = "txtResultZ";
             this.txtResultZ.ReadOnly = true;
-            this.txtResultZ.Size = new System.Drawing.Size(74, 36);
+            this.txtResultZ.Size = new System.Drawing.Size(83, 36);
             this.txtResultZ.TabIndex = 23;
             this.txtResultZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -418,10 +428,11 @@
             this.txtResultY.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txtResultY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResultY.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultY.Location = new System.Drawing.Point(803, 366);
+            this.txtResultY.Location = new System.Drawing.Point(903, 458);
+            this.txtResultY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtResultY.Name = "txtResultY";
             this.txtResultY.ReadOnly = true;
-            this.txtResultY.Size = new System.Drawing.Size(74, 36);
+            this.txtResultY.Size = new System.Drawing.Size(83, 36);
             this.txtResultY.TabIndex = 22;
             this.txtResultY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -430,10 +441,11 @@
             this.txtResultX.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txtResultX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResultX.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultX.Location = new System.Drawing.Point(653, 366);
+            this.txtResultX.Location = new System.Drawing.Point(735, 458);
+            this.txtResultX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtResultX.Name = "txtResultX";
             this.txtResultX.ReadOnly = true;
-            this.txtResultX.Size = new System.Drawing.Size(74, 36);
+            this.txtResultX.Size = new System.Drawing.Size(83, 36);
             this.txtResultX.TabIndex = 21;
             this.txtResultX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -442,10 +454,11 @@
             this.txtNormVector.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txtNormVector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNormVector.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNormVector.Location = new System.Drawing.Point(775, 310);
+            this.txtNormVector.Location = new System.Drawing.Point(872, 388);
+            this.txtNormVector.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNormVector.Name = "txtNormVector";
             this.txtNormVector.ReadOnly = true;
-            this.txtNormVector.Size = new System.Drawing.Size(74, 36);
+            this.txtNormVector.Size = new System.Drawing.Size(83, 36);
             this.txtNormVector.TabIndex = 27;
             this.txtNormVector.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -454,21 +467,22 @@
             this.textResult.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.textResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textResult.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textResult.Location = new System.Drawing.Point(970, 310);
+            this.textResult.Location = new System.Drawing.Point(1091, 388);
+            this.textResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textResult.Name = "textResult";
             this.textResult.ReadOnly = true;
-            this.textResult.Size = new System.Drawing.Size(74, 36);
+            this.textResult.Size = new System.Drawing.Size(83, 36);
             this.textResult.TabIndex = 28;
             this.textResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // VectorOps
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1173, 622);
+            this.ClientSize = new System.Drawing.Size(1320, 778);
             this.Controls.Add(this.textResult);
             this.Controls.Add(this.txtNormVector);
             this.Controls.Add(this.labelZ);
@@ -501,8 +515,9 @@
             this.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1280, 680);
-            this.MinimumSize = new System.Drawing.Size(780, 480);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(1437, 836);
+            this.MinimumSize = new System.Drawing.Size(1200, 586);
             this.Name = "VectorOps";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "VectorOps";

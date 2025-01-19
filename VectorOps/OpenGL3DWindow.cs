@@ -12,21 +12,20 @@ using OpenTK.Input;
 
 namespace VectorOps
 {
-    public static class FreeGLUT
-    {
-        [DllImport("freeglut.dll", EntryPoint = "glutBitmapCharacter")]
-        public static extern void BitmapCharacter(IntPtr font, int character);
-
-        public static readonly IntPtr GLUT_BITMAP_HELVETICA_18 = new IntPtr(5);
-    }
-
     public class OpenGL3DWindow : GameWindow
     {
         private float angle = 0f; // Unghiul de rotație
+        private float vectorX;
+        private float vectorY;
+        private float vectorZ;
 
-        public OpenGL3DWindow()
-            : base(800, 600, GraphicsMode.Default, "Grafic 3D cu Vector Rotit")
+        public OpenGL3DWindow(float vectorX, float vectorY, float vectorZ)
+            : base(900, 700, GraphicsMode.Default, "Grafic 3D cu Vector Rotit")
         {
+            this.vectorX = vectorX;
+            this.vectorY = vectorY;
+            this.vectorZ = vectorZ;
+
             VSync = VSyncMode.On; // Activăm VSync pentru animație fluidă
         }
 
@@ -64,6 +63,7 @@ namespace VectorOps
         protected override void OnRenderFrame(FrameEventArgs e)
         {
             base.OnRenderFrame(e);
+
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
             // Setăm matricea model-view
@@ -74,19 +74,16 @@ namespace VectorOps
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadMatrix(ref modelview);
 
-            // Desenăm gridul, axele și punctul de origine
+            // Desenăm grila, axele și vectorul
             DrawGrid();
             DrawAxes();
+            DrawAxisLabels(); // Apelăm noua metodă
             HighlightOrigin();
-
-            // Desenăm valorile gradate pe axe
-            DrawAxisLabels();
-
-            // Desenăm vectorul rotit
             DrawRotatingVector();
 
             SwapBuffers();
         }
+
 
 
 
@@ -129,7 +126,7 @@ namespace VectorOps
             GL.Begin(PrimitiveType.Lines);
             GL.Color3(1f, 1f, 1f); // Culoare albă
             GL.Vertex3(0, 0, 0);   // Originea
-            GL.Vertex3(1, 1, 0);   // Punctul final al vectorului
+            GL.Vertex3(vectorX, vectorY, vectorZ); // Punctul final al vectorului
             GL.End();
 
             GL.PopMatrix();
@@ -235,18 +232,57 @@ namespace VectorOps
 
         private void DrawAxisLabels()
         {
+            GL.LineWidth(2.0f); // Grosimea liniilor pentru marcaje
+            GL.Color3(1.0f, 1.0f, 1.0f); // Culoare albă pentru marcaje și etichete
+
+            GL.Begin(PrimitiveType.Lines);
+
+            // Marcaje și etichete pe axa X
             for (int i = -10; i <= 10; i++)
             {
-                if (i == 0) continue; // Sărim peste origine
+                GL.Vertex3(i, -0.1f, 0); // Marcaj jos
+                GL.Vertex3(i, 0.1f, 0);  // Marcaj sus
 
-                // Etichete pentru axa X
-                DrawTextOpenGL(i.ToString(), i, 0.0f, 0.0f);
+                // Eticheta numerică pentru axa X
+                if (i != 0) // Sărim peste eticheta la origine
+                    DrawTextOpenG(i.ToString(), i, -0.3f, 0); // Etichetă puțin sub marcaj
+            }
 
-                // Etichete pentru axa Y
-                DrawTextOpenGL(i.ToString(), 0.0f, i, 0.0f);
+            // Marcaje și etichete pe axa Y
+            for (int i = -10; i <= 10; i++)
+            {
+                GL.Vertex3(-0.1f, i, 0); // Marcaj stânga
+                GL.Vertex3(0.1f, i, 0);  // Marcaj dreapta
 
-                // Etichete pentru axa Z
-                DrawTextOpenGL(i.ToString(), 0.0f, 0.0f, i);
+                // Eticheta numerică pentru axa Y
+                if (i != 0) // Sărim peste eticheta la origine
+                    DrawTextOpenG(i.ToString(), -0.3f, i, 0); // Etichetă puțin lateral
+            }
+
+            // Marcaje și etichete pe axa Z
+            for (int i = -10; i <= 10; i++)
+            {
+                GL.Vertex3(0, -0.1f, i); // Marcaj jos
+                GL.Vertex3(0, 0.1f, i);  // Marcaj sus
+
+                // Eticheta numerică pentru axa Z
+                if (i != 0) // Sărim peste eticheta la origine
+                    DrawTextOpenG(i.ToString(), 0, -0.3f, i); // Etichetă puțin în spate
+            }
+
+            GL.End();
+        }
+
+
+        private void DrawTextOpenG(string text, float x, float y, float z)
+        {
+            // Setăm poziția textului în spațiul 3D
+            GL.RasterPos3(x, y, z);
+
+            foreach (char c in text)
+            {
+                // Renderizăm fiecare caracter folosind FreeType sau o metodă custom de text
+                GL.Bitmap(0, 0, 0, 0, 8, 0, Encoding.ASCII.GetBytes(new[] { c }));
             }
         }
 

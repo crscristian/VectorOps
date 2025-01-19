@@ -24,6 +24,10 @@ namespace VectorOps
             ZV1.Visible = false;
             txtZV2.Visible = false;
             ZV2.Visible = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Dimensiune fixă
+            this.MaximizeBox = true; // Dezactivează butonul de maximizare
+            this.MinimizeBox = true; // Opțional, permite minimizarea
+
         }
         //declaram variabile externe functiilor pentru a manipula intrariile celor 
         private void VectorOps_Load(object sender, EventArgs e)
@@ -179,7 +183,14 @@ namespace VectorOps
                     break;
 
                 case "Rotatie Vector":
-                    
+                    if (radVector3D.Checked) // Verificăm dacă este selectat 3D
+                    {
+                        Open3DRotation(); // Deschidem fereastra 3D
+                    }
+                    else
+                    {
+                        Open2DRotation(); // Deschidem fereastra 2D (există deja)
+                    }
                     break;
                 default:
                     MessageBox.Show("Opțiune necunoscută!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -457,6 +468,66 @@ namespace VectorOps
             labelY.Visible = false;
             labelZ.Visible = false;
         }
+
+        private void Open2DRotation()
+        {
+            try
+            {
+                // Preluăm coordonatele vectorului din câmpuri
+                float vectorX = ParseStringToFloat(txtXV1.Text);
+                float vectorY = ParseStringToFloat(txtYV1.Text);
+                Vector2D vector1 = new Vector2D(vectorX, vectorY);
+                float distanta_Origine = vector1.Modul();
+                Console.WriteLine($"Distanta vectorului fata de origine: ({vectorX}, {vectorY}) este: {distanta_Origine:F2}");
+                // Instanțiem form-ul pentru rotație și îl deschidem
+                RotatingVector2DForm rotationForm = new RotatingVector2DForm(vectorX, vectorY);
+                rotationForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Eroare: {ex.Message}", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Open3DRotation()
+        {
+            try
+            {
+                // Preluăm coordonatele vectorului din câmpurile de input
+                float vectorX = ParseStringToFloat(txtXV1.Text);
+                float vectorY = ParseStringToFloat(txtYV1.Text);
+                float vectorZ = ParseStringToFloat(txtZV1.Text);
+
+                // Închidem temporar fereastra principală
+                this.Hide();
+
+                // Instanțiem fereastra OpenGL 3D
+                OpenGL3DWindow rotationWindow = new OpenGL3DWindow(vectorX, vectorY, vectorZ);
+
+                // Abonare la evenimentul de închidere a ferestrei 3D
+                rotationWindow.Closed += (sender, args) =>
+                {
+                    // După ce fereastra OpenGL este închisă, redeschidem fereastra principală
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        this.Show(); // Afișăm din nou fereastra principală
+                        this.BringToFront(); // Aducem fereastra principală în prim-plan
+                    });
+                };
+
+                // Rulăm fereastra OpenGL pe firul principal
+                rotationWindow.Run(60.0); // Rulăm la 60 FPS
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Eroare: {ex.Message}", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+
 
         private float ParseStringToFloat(string input)
         {
