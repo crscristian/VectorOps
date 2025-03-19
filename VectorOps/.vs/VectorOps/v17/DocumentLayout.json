@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|d:\\visulastudioworkplace\\vectorops\\vectorops\\vector2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:vector2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\vector2dform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:vector2dform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|d:\\visulastudioworkplace\\vectorops\\vectorops\\vector3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:vector3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\vectorops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:vectorops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\vector2dform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:vector2dform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\vectorops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:vectorops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|d:\\visulastudioworkplace\\vectorops\\vectorops\\opengl2dwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:opengl2dwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\vector2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:vector2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|d:\\visulastudioworkplace\\vectorops\\vectorops\\vector3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:vector3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\opengl2dwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EB72455-7A27-43EB-A4CD-DDA0274F958B}|VectorOps.csproj|solutionrelative:opengl2dwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "OpenGL2DWindow.cs",
               "DocumentMoniker": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\OpenGL2DWindow.cs",
               "RelativeDocumentMoniker": "OpenGL2DWindow.cs",
@@ -50,64 +50,60 @@
               "RelativeToolTip": "OpenGL2DWindow.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T10:14:35.374Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-19T10:14:35.374Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Vector3D.cs",
               "DocumentMoniker": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\Vector3D.cs",
               "RelativeDocumentMoniker": "Vector3D.cs",
               "ToolTip": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\Vector3D.cs",
               "RelativeToolTip": "Vector3D.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-19T10:10:42.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Vector2D.cs",
               "DocumentMoniker": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\Vector2D.cs",
               "RelativeDocumentMoniker": "Vector2D.cs",
               "ToolTip": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\Vector2D.cs",
               "RelativeToolTip": "Vector2D.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T09:59:01.853Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-19T09:59:01.853Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Vector2DForm.cs",
               "DocumentMoniker": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\Vector2DForm.cs",
               "RelativeDocumentMoniker": "Vector2DForm.cs",
               "ToolTip": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\Vector2DForm.cs",
               "RelativeToolTip": "Vector2DForm.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAEwAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAEwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T19:51:31.948Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-18T19:51:31.948Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "VectorOps.cs",
               "DocumentMoniker": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\VectorOps.cs",
               "RelativeDocumentMoniker": "VectorOps.cs",
               "ToolTip": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\VectorOps.cs",
               "RelativeToolTip": "VectorOps.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAmwB8AAABTAAAAAAAAAA==",
+              "ViewState": "AgIAAFEBAAAAAAAAAAAmwLMBAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-07T21:10:40.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-07T21:10:40.92Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -115,20 +111,18 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-07T13:29:54.651Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-07T13:29:54.651Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "VectorOps.cs [Design]",
               "DocumentMoniker": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\VectorOps.cs",
               "RelativeDocumentMoniker": "VectorOps.cs",
               "ToolTip": "D:\\VisulaStudioWorkplace\\VectorOps\\VectorOps\\VectorOps.cs [Design]",
               "RelativeToolTip": "VectorOps.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T18:24:10.193Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-21T18:24:10.193Z"
             }
           ]
         }

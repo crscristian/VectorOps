@@ -27,7 +27,8 @@ namespace VectorOps
             this.FormBorderStyle = FormBorderStyle.FixedSingle; // Dimensiune fixă
             this.MaximizeBox = true; // Dezactivează butonul de maximizare
             this.MinimizeBox = true; // Opțional, permite minimizarea
-
+            Vector1.Text = "Coordonatele vectorului a\u20D7";
+            Vector2.Text = "Coordonatele vectorului b\u20D7";
         }
         //declaram variabile externe functiilor pentru a manipula intrariile celor 
         private void VectorOps_Load(object sender, EventArgs e)
