@@ -9,32 +9,31 @@ using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Input;
 
-
 namespace VectorOps
 {
     public class OpenGL3DWindow : GameWindow
     {
-        private float angle = 0f; // Unghiul de rotație
+        private float angle = 0f; // Rotation angle
         private float vectorX;
         private float vectorY;
         private float vectorZ;
 
         public OpenGL3DWindow(float vectorX, float vectorY, float vectorZ)
-            : base(900, 700, GraphicsMode.Default, "Grafic 3D cu Vector Rotit")
+            : base(900, 700, GraphicsMode.Default, "3D Graph with Rotating Vector")
         {
             this.vectorX = vectorX;
             this.vectorY = vectorY;
             this.vectorZ = vectorZ;
 
-            VSync = VSyncMode.On; // Activăm VSync pentru animație fluidă
+            VSync = VSyncMode.On; // Enable VSync for smooth animation
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            GL.ClearColor(Color4.Black); // Fundalul graficului
+            GL.ClearColor(Color4.Black); // Background color
 
-            // Activăm funcționalitatea 3D
+            // Enable 3D functionality
             GL.Enable(EnableCap.DepthTest);
         }
 
@@ -43,7 +42,7 @@ namespace VectorOps
             base.OnResize(e);
             GL.Viewport(0, 0, Width, Height);
 
-            // Setăm matricea de proiecție
+            // Set the projection matrix
             Matrix4 perspective = Matrix4.CreatePerspectiveFieldOfView(
                 MathHelper.DegreesToRadians(45f), Width / (float)Height, 0.1f, 100f);
             GL.MatrixMode(MatrixMode.Projection);
@@ -54,8 +53,8 @@ namespace VectorOps
         {
             base.OnUpdateFrame(e);
 
-            // Rotația crește continuu
-            angle += 50f * (float)e.Time; // 50 de grade pe secundă
+            // The rotation angle increases continuously
+            angle += 50f * (float)e.Time; // 50 degrees per second
             if (angle >= 360f)
                 angle -= 360f;
         }
@@ -66,148 +65,141 @@ namespace VectorOps
 
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
-            // Setăm matricea model-view
+            // Set the model-view matrix
             Matrix4 modelview = Matrix4.LookAt(
-                new Vector3(6, 6, 6), // Poziția camerei
-                Vector3.Zero,         // Punctul țintă (originea)
-                Vector3.UnitY);       // Vectorul "up"
+                new Vector3(6, 6, 6), // Camera position
+                Vector3.Zero,         // Target point (origin)
+                Vector3.UnitY);       // Up vector
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadMatrix(ref modelview);
 
-            // Desenăm grila, axele și vectorul
+            // Draw the grid, axes, and vector
             DrawGrid();
             DrawAxes();
-            DrawAxisLabels(); // Apelăm noua metodă
+            DrawAxisLabels(); // Call the new method
             HighlightOrigin();
             DrawRotatingVector();
 
             SwapBuffers();
         }
 
-
-
-
-
         private void DrawAxes()
         {
-            GL.LineWidth(2.0f); // Grosimea axelor
+            GL.LineWidth(2.0f); // Thickness of the axes
             GL.Begin(PrimitiveType.Lines);
 
-            // Axa X - roșu (extinsă la ±10)
+            // X axis - red (extended to ±10)
             GL.Color3(1f, 0f, 0f);
-            GL.Vertex3(-10, 0, 0); // Extindere spre stânga
-            GL.Vertex3(10, 0, 0);  // Extindere spre dreapta
+            GL.Vertex3(-10, 0, 0); // Extend to the left
+            GL.Vertex3(10, 0, 0);  // Extend to the right
 
-            // Axa Y - verde (extinsă la ±10)
+            // Y axis - green (extended to ±10)
             GL.Color3(0f, 1f, 0f);
-            GL.Vertex3(0, -10, 0); // Extindere în jos
-            GL.Vertex3(0, 10, 0);  // Extindere în sus
+            GL.Vertex3(0, -10, 0); // Extend downwards
+            GL.Vertex3(0, 10, 0);  // Extend upwards
 
-            // Axa Z - albastru (extinsă la ±10)
+            // Z axis - blue (extended to ±10)
             GL.Color3(0f, 0f, 1f);
-            GL.Vertex3(0, 0, -10); // Extindere în spate
-            GL.Vertex3(0, 0, 10);  // Extindere în față
+            GL.Vertex3(0, 0, -10); // Extend backwards
+            GL.Vertex3(0, 0, 10);  // Extend forwards
 
             GL.End();
         }
-
 
         private void DrawRotatingVector()
         {
             GL.PushMatrix();
 
-            // Aplicăm rotația
-            GL.Rotate(angle, 0.0, 1.0, 0.0); // Rotație în jurul axei Y
+            // Apply rotation
+            GL.Rotate(angle, 0.0, 1.0, 0.0); // Rotation around the Y axis
 
-            // Setăm grosimea liniei pentru vector
-            GL.LineWidth(2.5f); // Vector alb mai gros
+            // Set the line width for the vector
+            GL.LineWidth(2.5f); // Thicker white vector
 
-            // Desenăm vectorul
+            // Draw the vector
             GL.Begin(PrimitiveType.Lines);
-            GL.Color3(1f, 1f, 1f); // Culoare albă
-            GL.Vertex3(0, 0, 0);   // Originea
-            GL.Vertex3(vectorX, vectorY, vectorZ); // Punctul final al vectorului
+            GL.Color3(1f, 1f, 1f); // White color
+            GL.Vertex3(0, 0, 0);   // Origin
+            GL.Vertex3(vectorX, vectorY, vectorZ); // End point of the vector
             GL.End();
 
             GL.PopMatrix();
         }
 
-
         private void DrawGrid()
         {
-            GL.LineWidth(1.0f); // Grosimea liniilor pentru grid
-            GL.Color3(0.3f, 0.3f, 0.3f); // Culoare gri mai închis pentru grid
+            GL.LineWidth(1.0f); // Thickness of the grid lines
+            GL.Color3(0.3f, 0.3f, 0.3f); // Darker gray color for the grid
 
-            // Linii pe planul XY
+            // Lines on the XY plane
             GL.Begin(PrimitiveType.Lines);
-            for (float i = -10; i <= 10; i += 1.0f) // Extindere la ±10
+            for (float i = -10; i <= 10; i += 1.0f) // Extend to ±10
             {
-                // Linii paralele cu axa X
+                // Lines parallel to the X axis
                 GL.Vertex3(-10, i, 0);
                 GL.Vertex3(10, i, 0);
 
-                // Linii paralele cu axa Y
+                // Lines parallel to the Y axis
                 GL.Vertex3(i, -10, 0);
                 GL.Vertex3(i, 10, 0);
             }
             GL.End();
 
-            // Linii pe planul XZ
+            // Lines on the XZ plane
             GL.Begin(PrimitiveType.Lines);
             for (float i = -10; i <= 10; i += 1.0f)
             {
-                // Linii paralele cu axa X
+                // Lines parallel to the X axis
                 GL.Vertex3(-10, 0, i);
                 GL.Vertex3(10, 0, i);
 
-                // Linii paralele cu axa Z
+                // Lines parallel to the Z axis
                 GL.Vertex3(i, 0, -10);
                 GL.Vertex3(i, 0, 10);
             }
             GL.End();
 
-            // Linii pe planul YZ
+            // Lines on the YZ plane
             GL.Begin(PrimitiveType.Lines);
             for (float i = -10; i <= 10; i += 1.0f)
             {
-                // Linii paralele cu axa Y
+                // Lines parallel to the Y axis
                 GL.Vertex3(0, -10, i);
                 GL.Vertex3(0, 10, i);
 
-                // Linii paralele cu axa Z
+                // Lines parallel to the Z axis
                 GL.Vertex3(0, i, -10);
                 GL.Vertex3(0, i, 10);
             }
             GL.End();
         }
 
-
         private void DrawAxisTicks()
         {
-            GL.LineWidth(2.0f); // Grosimea liniilor pentru gradări
-            GL.Color3(1.0f, 1.0f, 1.0f); // Culoare albă pentru gradări
+            GL.LineWidth(2.0f); // Thickness of the tick lines
+            GL.Color3(1.0f, 1.0f, 1.0f); // White color for ticks
 
             GL.Begin(PrimitiveType.Lines);
 
-            // Gradări pe axa X
+            // Ticks on the X axis
             for (float i = -5; i <= 5; i += 1.0f)
             {
-                GL.Vertex3(i, -0.1f, 0); // Marcaj jos
-                GL.Vertex3(i, 0.1f, 0);  // Marcaj sus
+                GL.Vertex3(i, -0.1f, 0); // Tick below
+                GL.Vertex3(i, 0.1f, 0);  // Tick above
             }
 
-            // Gradări pe axa Y
+            // Ticks on the Y axis
             for (float i = -5; i <= 5; i += 1.0f)
             {
-                GL.Vertex3(-0.1f, i, 0); // Marcaj stânga
-                GL.Vertex3(0.1f, i, 0);  // Marcaj dreapta
+                GL.Vertex3(-0.1f, i, 0); // Tick left
+                GL.Vertex3(0.1f, i, 0);  // Tick right
             }
 
-            // Gradări pe axa Z
+            // Ticks on the Z axis
             for (float i = -5; i <= 5; i += 1.0f)
             {
-                GL.Vertex3(0, -0.1f, i); // Marcaj jos
-                GL.Vertex3(0, 0.1f, i);  // Marcaj sus
+                GL.Vertex3(0, -0.1f, i); // Tick below
+                GL.Vertex3(0, 0.1f, i);  // Tick above
             }
 
             GL.End();
@@ -215,77 +207,66 @@ namespace VectorOps
 
         private void HighlightOrigin()
         {
-            GL.PointSize(5.0f); // Mărimea punctului
+            GL.PointSize(5.0f); // Size of the point
             GL.Begin(PrimitiveType.Points);
-            GL.Color3(1f, 1f, 0f); // Culoare galbenă
-            GL.Vertex3(0, 0, 0);   // Punctul la origine
+            GL.Color3(1f, 1f, 0f); // Yellow color
+            GL.Vertex3(0, 0, 0);   // Point at the origin
             GL.End();
         }
 
         private void DrawTextOpenGL(string text, float x, float y, float z)
         {
-            // Setăm poziția textului în spațiul 3D
-            GL.RasterPos3(x, y, z);
-
-
-        }
-
-        private void DrawAxisLabels()
-        {
-            GL.LineWidth(2.0f); // Grosimea liniilor pentru marcaje
-            GL.Color3(1.0f, 1.0f, 1.0f); // Culoare albă pentru marcaje și etichete
-
-            GL.Begin(PrimitiveType.Lines);
-
-            // Marcaje și etichete pe axa X
-            for (int i = -10; i <= 10; i++)
-            {
-                GL.Vertex3(i, -0.1f, 0); // Marcaj jos
-                GL.Vertex3(i, 0.1f, 0);  // Marcaj sus
-
-                // Eticheta numerică pentru axa X
-                if (i != 0) // Sărim peste eticheta la origine
-                    DrawTextOpenG(i.ToString(), i, -0.3f, 0); // Etichetă puțin sub marcaj
-            }
-
-            // Marcaje și etichete pe axa Y
-            for (int i = -10; i <= 10; i++)
-            {
-                GL.Vertex3(-0.1f, i, 0); // Marcaj stânga
-                GL.Vertex3(0.1f, i, 0);  // Marcaj dreapta
-
-                // Eticheta numerică pentru axa Y
-                if (i != 0) // Sărim peste eticheta la origine
-                    DrawTextOpenG(i.ToString(), -0.3f, i, 0); // Etichetă puțin lateral
-            }
-
-            // Marcaje și etichete pe axa Z
-            for (int i = -10; i <= 10; i++)
-            {
-                GL.Vertex3(0, -0.1f, i); // Marcaj jos
-                GL.Vertex3(0, 0.1f, i);  // Marcaj sus
-
-                // Eticheta numerică pentru axa Z
-                if (i != 0) // Sărim peste eticheta la origine
-                    DrawTextOpenG(i.ToString(), 0, -0.3f, i); // Etichetă puțin în spate
-            }
-
-            GL.End();
-        }
-
-
-        private void DrawTextOpenG(string text, float x, float y, float z)
-        {
-            // Setăm poziția textului în spațiul 3D
+            // Set the position of the text in 3D space
             GL.RasterPos3(x, y, z);
 
             foreach (char c in text)
             {
-                // Renderizăm fiecare caracter folosind FreeType sau o metodă custom de text
+                // Render each character using FreeType or a custom text method
                 GL.Bitmap(0, 0, 0, 0, 8, 0, Encoding.ASCII.GetBytes(new[] { c }));
             }
         }
 
-    }
+        private void DrawAxisLabels()
+        {
+            GL.LineWidth(2.0f); // Thickness of the lines for ticks
+            GL.Color3(1.0f, 1.0f, 1.0f); // White color for ticks and labels
 
+            GL.Begin(PrimitiveType.Lines);
+
+            // Ticks and labels on the X axis
+            for (int i = -10; i <= 10; i++)
+            {
+                GL.Vertex3(i, -0.1f, 0); // Tick below
+                GL.Vertex3(i, 0.1f, 0);  // Tick above
+
+                // Numeric label for the X axis
+                if (i != 0) // Skip the label at the origin
+                    DrawTextOpenGL(i.ToString(), i, -0.3f, 0); // Label slightly below the tick
+            }
+
+            // Ticks and labels on the Y axis
+            for (int i = -10; i <= 10; i++)
+            {
+                GL.Vertex3(-0.1f, i, 0); // Tick left
+                GL.Vertex3(0.1f, i, 0);  // Tick right
+
+                // Numeric label for the Y axis
+                if (i != 0) // Skip the label at the origin
+                    DrawTextOpenGL(i.ToString(), -0.3f, i, 0); // Label slightly to the side
+            }
+
+            // Ticks and labels on the Z axis
+            for (int i = -10; i <= 10; i++)
+            {
+                GL.Vertex3(0, -0.1f, i); // Tick below
+                GL.Vertex3(0, 0.1f, i);  // Tick above
+
+                // Numeric label for the Z axis
+                if (i != 0) // Skip the label at the origin
+                    DrawTextOpenGL(i.ToString(), 0, -0.3f, i); // Label slightly behind
+            }
+
+            GL.End();
+        }
+    }
 }

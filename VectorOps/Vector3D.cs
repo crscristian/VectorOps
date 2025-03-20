@@ -8,12 +8,12 @@ namespace VectorOps
 {
     public class Vector3D
     {
-        // Proprietăți pentru coordonatele X, Y și Z
+        // Properties for X, Y, and Z coordinates
         public float X { get; }
         public float Y { get; }
         public float Z { get; }
 
-        // Constructor pentru inițializarea vectorului
+        // Constructor to initialize the vector
         public Vector3D(float x, float y, float z)
         {
             X = x;
@@ -21,32 +21,32 @@ namespace VectorOps
             Z = z;
         }
 
-        // Metodă statică pentru adunarea a doi vectori
-        public static Vector3D Adunare(Vector3D v1, Vector3D v2)
+        // Static method for adding two vectors
+        public static Vector3D Add(Vector3D v1, Vector3D v2)
         {
             return new Vector3D(v1.X + v2.X, v1.Y + v2.Y, v1.Z + v2.Z);
         }
 
-        // Metodă statică pentru scăderea a doi vectori
-        public static Vector3D Scadere(Vector3D v1, Vector3D v2)
+        // Static method for subtracting two vectors
+        public static Vector3D Subtract(Vector3D v1, Vector3D v2)
         {
             return new Vector3D(v1.X - v2.X, v1.Y - v2.Y, v1.Z - v2.Z);
         }
 
-        // Metodă pentru calculul modulului vectorului
-        public float Modul()
+        // Method to calculate the magnitude of the vector
+        public float Magnitude()
         {
             return (float)Math.Sqrt(X * X + Y * Y + Z * Z);
         }
 
-        // Metodă statică pentru calculul produsului scalar a doi vectori
-        public static float ProdusScalar(Vector3D v1, Vector3D v2)
+        // Static method to calculate the dot product of two vectors
+        public static float DotProduct(Vector3D v1, Vector3D v2)
         {
             return v1.X * v2.X + v1.Y * v2.Y + v1.Z * v2.Z;
         }
 
-        // Metodă statică pentru calculul produsului vectorial a doi vectori
-        public static Vector3D ProdusVectorial(Vector3D v1, Vector3D v2)
+        // Static method to calculate the cross product of two vectors
+        public static Vector3D CrossProduct(Vector3D v1, Vector3D v2)
         {
             float x = v1.Y * v2.Z - v1.Z * v2.Y;
             float y = v1.Z * v2.X - v1.X * v2.Z;
@@ -54,7 +54,7 @@ namespace VectorOps
             return new Vector3D(x, y, z);
         }
 
-        // Suprascrierea metodei ToString pentru afișarea vectorului
+        // Override the ToString method to display the vector
         public override string ToString()
         {
             return $"({X}, {Y}, {Z})";
