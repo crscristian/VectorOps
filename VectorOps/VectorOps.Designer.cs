@@ -80,11 +80,11 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblTitle.Location = new System.Drawing.Point(428, 43);
+            this.lblTitle.Location = new System.Drawing.Point(527, 53);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(358, 54);
+            this.lblTitle.Size = new System.Drawing.Size(156, 54);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Operatii cu Vectori";
+            this.lblTitle.Text = "Vectors";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // radVector2D
@@ -322,9 +322,9 @@
             this.label2.ForeColor = System.Drawing.Color.SpringGreen;
             this.label2.Location = new System.Drawing.Point(830, 191);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 41);
+            this.label2.Size = new System.Drawing.Size(105, 41);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Rezultat";
+            this.label2.Text = "Result";
             // 
             // txtResult
             // 
@@ -442,7 +442,7 @@
             this.txtNormVector.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txtNormVector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNormVector.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNormVector.Location = new System.Drawing.Point(775, 310);
+            this.txtNormVector.Location = new System.Drawing.Point(892, 310);
             this.txtNormVector.Name = "txtNormVector";
             this.txtNormVector.ReadOnly = true;
             this.txtNormVector.Size = new System.Drawing.Size(74, 31);
